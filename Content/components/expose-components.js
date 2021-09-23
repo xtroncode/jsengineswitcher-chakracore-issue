@@ -11,8 +11,15 @@ global.ReactDOMServer = ReactDOMServer;
 
 class ServerApp extends Component {
     render() {
+      const dateTime = new Date();
+      const formattedTime = dateTime.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
       return (
-        <>{this.props.a.b}</>)
+        <div>{formattedTime}</div>
+      )
     }
 }
 

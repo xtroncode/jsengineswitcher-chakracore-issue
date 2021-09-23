@@ -1,4 +1,4 @@
-using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.V8;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -24,8 +24,8 @@ namespace React.Sample.Webpack.CoreMvc
 		{
 			services.AddMvc();
 
-			services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName)
-				.AddChakraCore();
+			services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName)
+				.AddV8();
 
 			services.AddReact();
 			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
